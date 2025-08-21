@@ -1,0 +1,41 @@
+html,body{margin:0;height:100%;overflow:hidden;background:#1e2a33;font-family:system-ui,-apple-system,Segoe UI,Roboto}
+#game{display:block;width:100vw;height:100vh;background:#23323d;touch-action:none}
+
+/* HUD */
+.hud{position:fixed;left:12px;top:12px;display:flex;gap:12px;align-items:flex-start;z-index:10}
+.hp{position:relative;width:190px;height:18px;border-radius:10px;background:#2a3943;box-shadow:0 0 0 2px rgba(255,255,255,.08) inset}
+.hp-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#ff6b6b,#ffa26b)}
+.hp-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#08141c;font-weight:800;font-size:11px;text-shadow:0 1px 0 rgba(255,255,255,.4)}
+.stars{display:flex;gap:4px;margin-top:2px}
+.stars .star{width:18px;height:18px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5));opacity:.3}
+.stars .star.on{opacity:1}
+.inventory{margin-left:8px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:6px 8px;color:#fff;font-size:12px;min-width:110px}
+.inventory b{color:#ffd54f}
+
+/* Minimap */
+#minimap{position:fixed;right:10px;top:10px;width:180px;height:180px;border-radius:10px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.15);z-index:9}
+
+/* Hint */
+.hint{position:fixed;left:50%;top:8px;transform:translateX(-50%);background:rgba(0,0,0,.4);color:#fff;padding:6px 10px;border-radius:8px;font-size:12px;z-index:8}
+
+/* Joystick */
+.joy{position:fixed;left:18px;bottom:18px;width:140px;height:140px;opacity:.95;z-index:7}
+.joy-base{position:absolute;inset:0;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);backdrop-filter:blur(4px)}
+.joy-knob{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.35);border:2px solid rgba(0,0,0,.25)}
+
+/* Mobile actions */
+.actions{position:fixed;right:18px;bottom:18px;display:flex;gap:10px;z-index:7}
+.btn{width:66px;height:66px;border-radius:16px;border:none;color:#122;font-weight:800;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.shoot{background:#ffd54f}
+.interact{background:#7ecbff}
+.punch{background:#ff9e80}
+.weapon{background:#c5e1a5}
+@media (min-width:920px){ .joy,.actions{display:none} }
+
+/* Dialog */
+.dialog{position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;z-index:20}
+.panel{width:min(520px,90vw);background:#1f2a33;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px 18px;color:#eaf3fa}
+.dlg-text{white-space:pre-wrap;margin:10px 0 16px}
+.dlg-actions{display:flex;gap:10px;justify-content:flex-end}
+.panel button{background:#ffd54f;border:none;border-radius:10px;padding:8px 14px;font-weight:800;color:#132}
+.panel button:last-child{background:#90caf9}
