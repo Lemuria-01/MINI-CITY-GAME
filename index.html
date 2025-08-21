@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <title>Micro GTA – Top-Down v1</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hp">
+      <div class="hp-fill" id="hpFill" style="width:100%"></div>
+      <div class="hp-label" id="hpLabel">HP 100/100</div>
+    </div>
+    <div class="stars" id="stars"></div>
+    <div class="inventory" id="inv"></div>
+  </div>
+
+  <!-- Minimap -->
+  <canvas id="minimap" width="180" height="180"></canvas>
+
+  <!-- Hints -->
+  <div class="hint" id="hint">
+    ПК: WASD — ходьба, ЛКМ — стрелять, E — взаимодействие, F — удар, 1/2/3 — смена оружия.  
+    Мобайл: слева — джойстик, справа — кнопки.
+  </div>
+
+  <!-- Mobile joystick & actions -->
+  <div class="joy" id="joy">
+    <div class="joy-base"></div>
+    <div class="joy-knob" id="joyKnob"></div>
+  </div>
+  <div class="actions">
+    <button class="btn shoot" id="btnShoot">🔫</button>
+    <button class="btn interact" id="btnUse">🤝</button>
+    <button class="btn punch" id="btnPunch">👊</button>
+    <button class="btn weapon" id="btnCycle">1️⃣</button>
+  </div>
+
+  <!-- Mission dialog -->
+  <div class="dialog" id="dlg" hidden>
+    <div class="panel">
+      <h3 id="dlgTitle">Mission</h3>
+      <div id="dlgText" class="dlg-text"></div>
+      <div class="dlg-actions">
+        <button id="dlgStart">Start</button>
+        <button id="dlgClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
